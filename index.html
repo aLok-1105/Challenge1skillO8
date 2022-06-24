@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="Images/favicon-32x32.png">
+    <script src="https://kit.fontawesome.com/8cf1ef1938.js" crossorigin="anonymous"></script>
+    <title>Challenge</title>
+</head>
+<body>
+    
+    <div class="primary">
+        <div class="secondary">
+            <div class="tertiary">
+                <div class="drawer">
+                    <img class="drawer-img" src="Images/drawers.jpg" alt="">
+                </div>
+                <div class="container">
+                    <div class="text-container">
+                        <div class="text">
+                            <h4>
+                                Shift the overall look and feel by adding this wonderful touches to furniture in your house
+                            </h4>
+                            <p>
+                                Ever been in the room and felt like something is missing? Perhaps it felt slightly bare and uninviting. I have got some simple tips to help you make any room complete.
+                            </p>
+                        </div>
+
+                        <div class="profile-container-mob" id="profile-container-mob">
+                            <div class="mob-container" id="mob-container">
+                                <div class="mob-share" id="mob-myPopup">
+                                    <div style="font-size: 5px;"> <span class="mob-text-share">SHARE</span> 
+                                        <img class="mob-icon" style="margin-left: 5px;" src="Images/icon-facebook.svg" alt="">
+                                        <img class="mob-icon" src="Images/icon-pinterest.svg" alt="">
+                                        <img class="mob-icon" src="Images/icon-twitter.svg" alt="">
+                                    </div>
+                                    <div class="mob-share-logo">
+                                        <div class="popup" onclick="myFunction2()" id="mob-share">
+                                            <i class="fa-solid fa-share"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-container" id="profile-container">
+                            <div class="profile">
+                                <img class="profile-img" src="Images/avatar-michelle.jpg" alt=""><span class="date"> <b> Michella Appleton</b><br> 28 June 2020</span>
+                            </div>
+                            <div class="share">
+                                <div class="popup" onclick="myFunction1()"><i class="fa-solid fa-share"></i>
+                                    <div class="popuptext" id="myPopup"> 
+                                        <div> SHARE </div>
+                                        <img class="icon" src="Images/icon-facebook.svg" alt="">
+                                        <img class="icon" src="Images/icon-pinterest.svg" alt="">
+                                        <img class="icon" src="Images/icon-twitter.svg" alt="">
+                                    </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+
+    
+<script>
+    // When the user clicks on div, open the popup
+    // function myFunction(x) {
+    //   var popup = document.getElementById("myPopup");
+    //   popup.classList.toggle("show");
+    //   var mobCont = document.getElementById("profile-container-mob");
+    //   var proCont = document.getElementById("profile-container");
+
+    //   mobCont.style.display="block";
+    //   proCont.style.display="none";
+
+    // }
+
+    
+    // var mobCont = document.getElementById("profile-container-mob");
+    // var proCont = document.getElementById("profile-container");
+
+
+    // function myFunction(x) {
+    // if (x.matches) { // If media query matches
+    //     mobCont.style.display="block";
+    //   proCont.style.display="none";
+    // } else {
+    //     var popup = document.getElementById("myPopup");
+    //   popup.classList.toggle("show");
+    // }
+    // }
+
+    // var x = window.matchMedia("(max-width: 375px)")
+    // myFunction(x) // Call listener function at run time
+    // x.addListener(myFunction)
+
+    var x = window.matchMedia("(max-width: 375px)")
+    var mobCont = document.getElementById("profile-container-mob");
+    var proCont = document.getElementById("profile-container");
+    var popup = document.getElementById("myPopup");
+
+    function myFunction() {
+        if(x.matches){
+            console.log("hello")
+
+            // popup.classList.toggle("show");   
+
+            popup.style.display="none";
+            // mobCont.style.display="block";
+            // proCont.style.display="none";
+        }
+        else{
+            console.log("gello")   
+            popup.style.display="flex";
+            
+            mobCont.style.display="none";
+            proCont.style.display="flex";
+
+        }
+    }
+    myFunction(x) // Call listener function at run time
+    x.addListener(myFunction)
+
+    function myFunction1() {
+        if(x.matches){
+            console.log("hello")
+
+            popup.classList.toggle("show");   
+
+            // popup.style.display="none !important";
+            mobCont.style.display="block";
+            proCont.style.display="none";
+        }
+        else{
+            console.log("gello")
+            popup.classList.toggle("show");   
+            mobCont.style.display="none";
+            proCont.style.display="flex";    
+        }
+    }
+
+    function myFunction2() {
+        if(x.matches){
+            console.log("gello")
+            // popup.classList.toggle("show");   
+            mobCont.style.display="none";
+            proCont.style.display="flex"; 
+        }
+        else{
+            console.log("hello")
+
+            // popup.classList.toggle("show");   
+
+            // popup.style.display="none !important";
+            mobCont.style.display="block";
+            proCont.style.display="none";
+               
+        }
+    }
+
+
+
+    </script>
+</body>
+</html>
